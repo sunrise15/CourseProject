@@ -1,0 +1,27 @@
+
+
+Smartphone Experiment Tidy Data Set Variables
+
+	Activity
+	Activity Code.  What the subject was doing while the observation was taken.
+	-	Walking 
+	-	Walking Upstairs
+	-	Walking Downstairs
+	-	Sitting
+	-	Standing
+	-	Laying
+
+	Variable	
+	The type of data that was calculated
+	-	Mean
+	-	Standard Deviation
+
+	Subject
+	The subject performing the experiment
+	-	Subject X
+	-	Subject Y
+	-	Subject Z
+	-	ALL – if all subjects were involved
+
+	Average
+	Average readings of all observations, for one particular activity, variable, and subject.

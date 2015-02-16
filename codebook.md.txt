@@ -1,0 +1,320 @@
+Smartphone Experiment: Tidy Data Set
+================================
+
+********************************
+Part 1:  Background/Source
+ ********************************
+A series of experiments were conducted on a group of 30 volunteers within an age bracket of 19-48 
+years, to monitor various types of sensor signals based on their activities (walking, walking upstairs, 
+walking downstairs, sitting, standing, laying).  
+The following raw data was obtained from the uci website:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
+
+This data can be categorized into 3 categories:
+-	Subject performing the activity
+-	Activities performed (walking, walking upstairs, walking downstairs, sitting, standing, laying)
+-	Measurement results (variables like mean or standard deviation, time or frequency signals, body or 
+gravity signal, accelerator or gyroscope signal,  axial signals, jerk signals, magnitude signals)
+
+**********************************
+Part 2:  Process 
+**********************************
+The raw files are provided in both training and test environments.  The following procedure was 
+implemented to create the tidy data set based on the raw files:
+-	Read in all the measurement files.  The data are in files ./train/X_train.txt and ./test/X_text.txt.  The 
+associated feature types are stored in the ./features.txt file.  Extract only the mean and standard 
+deviation variables.
+-	Read in activity files.  The activity codes are stored in ./train/Y_train.txt and ./test/Y_test.txt.  The 
+actual mapping of each code is stored in the ./activity_labels.txt file.
+-	Read in subject files.  The subjects for each measurement are stored in ./train/subject_train.txt and 
+./test/subject_test.txt.
+-	All 3 files have 10299 rows, one row for each observation.
+-	Merge the 3 types of files together from both training and test regions as described above.
+-	Appropriately assign descriptive activity names by mapping the activity file against the activity labels 
+file.  Appropriately assign descriptive measurement variable names by mapping each row of the 
+features file against each column of the measurement file.
+-	Create an independent tidy data set with the average of each measurement variable for each 
+activity and each subject.  
+
+*************************
+Part 3:  Variables of the tidy data set
+*************************
+Subject:
+=======
+Number 1 – 30.  This is the subject performing the experiment.  There are 30 subject volunteers carrying 
+out the experiment.  Each one is assigned a number 1 – 30.
+
+Activity:
+=======
+Activity Code.  What the subject was doing while the observation was taken.
+-	walking 
+-	walking_upstairs
+-	walking_downstairs
+-	sitting
+-	standing
+-	laying
+
+tBodyAcc.mean.X:
+===============
+Average mean value of time domain, body acceleration, X direction axial signal
+
+tBodyAcc.mean.Y:   
+===============
+Average mean value of time domain, body acceleration, Y direction axial signal
+
+tBodyAcc.mean.Z :      
+================
+Average mean value of time domain, body acceleration, Z direction axial signal   
+
+tBodyAcc.std.X:    
+=============
+Average standard deviation of time domain, body acceleration, X direction axial signal
+
+tBodyAcc.std.Y:        
+=============
+Average standard deviation of time domain, body acceleration, Y direction axial signal
+
+tBodyAcc.std.Z:        
+=============  
+Average standard deviation of time domain, body acceleration, Z direction axial signal
+
+tGravityAcc.mean.X:     
+=================   
+Average mean value of time domain, gravity acceleration, X direction axial signal
+
+tGravityAcc.mean.Y :      
+=================
+Average mean value of time domain, gravity acceleration, Y direction axial signal
+
+tGravityAcc.mean.Z :     
+=================
+Average mean value of time domain, gravity acceleration, Z direction axial signal
+
+tGravityAcc.std.X:
+===============
+Average standard deviation of time domain, gravity acceleration, X direction axial signal
+
+tGravityAcc.std.Y:      
+===============
+Average standard deviation of time domain, gravity acceleration, Y direction axial signal
+
+tGravityAcc.std.Z:       
+===============
+Average standard deviation of time domain, gravity acceleration, Z direction axial signal
+
+tBodyAccJerk.mean.X: 
+==================    
+Average mean value of time domain, body acceleration jerk, X direction axial signal  
+
+tBodyAccJerk.mean.Y:     
+==================
+Average mean value of time domain, body acceleration jerk, Y direction axial signal  
+
+tBodyAccJerk.mean.Z:      
+==================
+Average mean value of time domain, body acceleration jerk, Z direction axial signal  
+
+tBodyAccJerk.std.X: 
+================
+Average standard deviation of time domain, body acceleration jerk, X direction axial signal  
+
+tBodyAccJerk.std.Y:  
+================    
+Average standard deviation of time domain, body acceleration jerk, Y direction axial signal  
+
+tBodyAccJerk.std.Z:      
+================
+Average standard deviation of time domain, body acceleration jerk, Z direction axial signal  
+
+tBodyGyro.mean.X:      
+================
+Average mean value of time domain, body gyroscope, X direction axial signal  
+
+tBodyGyro.mean.Y:        
+================
+Average mean value of time domain, body gyroscope, Y direction axial signal  
+
+tBodyGyro.mean.Z:       
+================
+Average mean value of time domain, body gyroscope, Z direction axial signal  
+
+tBodyGyro.std.X:   
+==============
+Average standard deviation of time domain, body gyroscope, X direction axial signal  
+
+tBodyGyro.std.Y:    
+==============     
+Average standard deviation of time domain, body gyroscope, Y direction axial signal  
+
+tBodyGyro.std.Z:   
+==============      
+Average standard deviation of time domain, body gyroscope, Z direction axial signal  
+
+tBodyGyroJerk.mean.X:     
+===================
+Average mean value of time domain, body gyroscope jerk, X direction axial signal  
+
+tBodyGyroJerk.mean.Y:   
+===================
+Average mean value of time domain, body gyroscope jerk, Y direction axial signal  
+
+tBodyGyroJerk.mean.Z:     
+===================
+Average mean value of time domain, body gyroscope jerk, Z direction axial signal  
+
+tBodyGyroJerk.std.X :
+==================
+Average standard deviation of time domain, body gyroscope jerk, X direction axial signal  
+
+tBodyGyroJerk.std.Y:    
+=================
+Average standard deviation of time domain, body gyroscope jerk, Y direction axial signal  
+
+tBodyGyroJerk.std.Z:     
+=================
+Average standard deviation of time domain, body gyroscope jerk, Z direction axial signal  
+
+tBodyAccMag.mean:        
+=================
+Average mean value of time domain, body acceleration magnitude signal
+
+tBodyAccMag.std:  
+===============
+Average standard deviation of time domain, body acceleration magnitude signal  
+
+tGravityAccMag.mean:      
+===================
+Average mean value of time domain, gravity acceleration magnitude signal
+
+tGravityAccMag.std: 
+=================
+Average standard deviation of time domain, gravity acceleration magnitude signal
+
+tBodyAccJerkMag.mean:      
+=====================
+Average mean value of time domain, body acceleration jerk magnitude signal
+
+tBodyAccJerkMag.std:
+==================
+Average standard deviation of time domain, body acceleration jerk magnitude signal
+
+tBodyGyroMag.mean:      
+==================
+Average mean value of time domain, body gyroscope magnitude signal 
+
+tBodyGyroMag.std:   
+================
+Average standard deviation of time domain, body gyroscope magnitude signal
+
+tBodyGyroJerkMag.mean:    
+======================
+Average mean value of time domain, body gyroscope jerk magnitude signal 
+
+tBodyGyroJerkMag.std:
+====================
+Average standard deviation of time domain, body gyroscope jerk magnitude signal 
+
+fBodyAcc.mean.X:
+===============
+Average mean value of frequency domain, body acceleration, X direction axial signal
+
+fBodyAcc.mean.Y:        
+===============
+Average mean value of frequency domain, body acceleration, Y direction axial signal
+
+fBodyAcc.mean.Z:      
+===============
+Average mean value of frequency domain, body acceleration, Z direction axial signal
+
+fBodyAcc.std.X:     
+=============
+Average standard deviation of frequency domain, body acceleration, X direction axial signal
+
+fBodyAcc.std.Y:   
+=============
+Average standard deviation of frequency domain, body acceleration, Y direction axial signal
+
+fBodyAcc.std.Z:    
+=============
+Average standard deviation of frequency domain, body acceleration, Z direction axial signal
+
+fBodyAccJerk.mean.X:
+==================       
+Average mean value of frequency domain, body acceleration jerk, X direction axial signal
+
+fBodyAccJerk.mean.Y:
+==================     
+Average mean value of frequency domain, body acceleration jerk, Y direction axial signal
+
+fBodyAccJerk.mean.Z:
+==================     
+Average mean value of frequency domain, body acceleration jerk, Z direction axial signal
+
+fBodyAccJerk.std.X: 
+================
+Average standard deviation of frequency domain, body acceleration jerk, X direction axial signal
+
+fBodyAccJerk.std.Y:
+================  
+Average standard deviation of frequency domain, body acceleration jerk, Y direction axial signal
+
+fBodyAccJerk.std.Z:      
+================
+Average standard deviation of frequency domain, body acceleration jerk, Z direction axial signal
+
+fBodyGyro.mean.X:     
+================    
+Average mean value of frequency domain, body gyroscope, X direction axial signal 
+
+fBodyGyro.mean.Y:        
+================
+Average mean value of frequency domain, body gyroscope, Y direction axial signal 
+
+fBodyGyro.mean.Z:       
+================ 
+Average mean value of frequency domain, body gyroscope, Z direction axial signal 
+
+fBodyGyro.std.X:
+==============
+Average standard deviation of frequency domain, body gyroscope, X direction axial signal 
+
+fBodyGyro.std.Y:   
+==============
+Average standard deviation of frequency domain, body gyroscope, Y direction axial signal 
+
+fBodyGyro.std.Z: 
+==============
+Average standard deviation of frequency domain, body gyroscope, Z direction axial signal 
+
+fBodyAccMag.mean:         
+================= 
+Average mean value of frequency domain, body acceleration magnitude signal
+
+fBodyAccMag.std: 
+===============
+Average standard deviation of frequency domain, body acceleration magnitude signal
+
+fBodyBodyAccJerkMag.mean:  
+========================
+Average mean value of frequency domain, body acceleration jerk magnitude signal 
+
+fBodyBodyAccJerkMag.std:
+======================
+Average standard deviation of frequency domain, body acceleration jerk magnitude signal 
+
+fBodyBodyGyroMag.mean:   
+======================
+Average mean value of frequency domain, body gyroscope magnitude signal 
+
+fBodyBodyGyroMag.std:
+====================
+Average standard deviation of frequency domain, body gyroscope magnitude signal 
+
+fBodyBodyGyroJerkMag.mean:
+==========================
+Average mean value of frequency domain, body gyroscope jerk magnitude signal 
+
+fBodyBodyGyroJerkMag.std:
+========================
+Average standard deviation of frequency domain, body gyroscope jerk magnitude signal 
+
